@@ -1,0 +1,171 @@
+@import "globals";
+@import "variables";
+
+.page-wrapper {
+    height: 100%;
+}
+
+.img-background {
+    z-index: 0;
+    position: absolute;
+    width: 100%;
+    max-width: 375px;
+    &.top {
+        top: 0;
+        left: 0;
+    }
+    &.bottom{
+        bottom: 0;
+        left: 0;
+        @media (min-width: $breakpoint-large) {
+            right: 0;
+            left: unset;
+            max-width: 70%;
+        }
+    }
+    img {
+        width: 100%;
+    }
+}
+
+.body-wrapper {
+    padding: 90px 20px;
+    max-width: 375px;
+    position: relative;
+    @media (min-width: $breakpoint-large) {
+        max-width: 1440px;
+        padding: 90px 100px;
+    }
+}
+
+.header {
+    @media (min-width: $breakpoint-large) {
+        display: flex;
+        justify-content: space-between;
+    }
+    .main {
+        text-align: center;
+        @media (min-width: $breakpoint-large) {
+           text-align: left;
+           width: 40%;
+        }
+    }
+}
+
+.title {
+    color: $darkMagenta;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.description {
+    margin-top: 30px;
+    font-weight: 500;
+    color: $darkGreyshMagenta;
+    line-height: 1.6;
+}
+
+.ratings {
+    margin-top: 40px;
+    @media (min-width: $breakpoint-large) {
+        margin-top: 0;
+    }
+    .rating-box {
+        background-color: $lightGrayshMagenta;
+        border-radius: 5px;
+        padding: 20px;
+        @media (min-width: $breakpoint-large) {
+            display: flex;
+            &:nth-child(1) {
+                position: relative;
+                right: 80px;
+            }
+            &:nth-child(2) {
+                position: relative;
+                right: 40px;
+            }
+        }
+        &:not(:last-child) {
+            margin-bottom: 20px;
+        }
+        .stars {
+            margin-right: 20px;
+            img {
+                @media (min-width: $breakpoint-large) {
+                    width: 15px;
+                    height: 15px;
+                }
+                &:not(:last-child) {
+                    margin-right: 8px;
+                }
+            }
+        }
+        .rating-description {
+            text-align: center;
+            margin-top: 15px;
+            color: $darkMagenta;
+            font-weight: 700;
+            font-size: 15px;
+            @media (min-width: $breakpoint-large) {
+                font-size: 12px;
+                margin-top: 0;
+                align-self: center;
+            }
+        }
+    }
+}
+
+
+.comments {
+    margin-top: 40px;
+    @media (min-width: $breakpoint-large) {
+        margin-top: 80px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 20px;
+    }
+    .comment-card {
+        &:not(:last-child) {
+            margin-bottom: 20px;
+        }
+        @media (min-width: $breakpoint-large) {
+            margin-bottom: 0 !important;
+            &:nth-child(2) {
+                position: relative;
+                top: 20px;
+            }
+            &:nth-child(3) {
+                position: relative;
+                top: 40px;
+            }
+        }
+        background-color: $darkMagenta;
+        border-radius: 10px;
+        padding: 30px;
+        .card-header {
+            margin-bottom: 20px;
+            align-items: center;
+            .img-profile {
+                margin-right: 20px;
+                width: 40px;
+                clip-path: circle(50%);
+            }
+            .buyer-info {
+                font-size: 12px;
+                .name {
+                    color: $white;
+                    font-weight: 700;
+                    margin-bottom: 5px;
+                }
+                .verified {
+                    color: $softPink;
+                }
+            }
+        }
+        .card-body {
+            color: $lightGrayshMagenta;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+    }
+}
